@@ -4,7 +4,6 @@ import Btn from "./Btns";
 
 function App ()
 {
-  // "homepage": "https://hg3537.github.io/Calculator",
   const [ calc, setCalc ] = useState('');
   const [ result, setResult ] = useState('');
   const IntegerFormater = new Intl.NumberFormat('en-us', { maximumFractionDigits: 0 });
@@ -37,8 +36,6 @@ function App ()
       return;
     }
     setCalc( FormatOperand (eval(calc).toString()))
-
-
   }
   function DeleatAll ()
   {
@@ -55,36 +52,35 @@ function App ()
       <div className="container">
         <h1 className="my-3 text-light fw-bold">calc</h1>
         <div className="output">{ calc|| '0'}</div>
-        <div className="container box py-3 my-3">
+        <div className="container box py-3 my-3 shadow-lg">
           <div className="d-flex">
             <Btn Nmb='1' handlerClick={ upDateResult } />
             <Btn Nmb='2' handlerClick={ upDateResult } />
             <Btn Nmb='3' handlerClick={ upDateResult } />
             <button className="btn btn-danger m-2 px-4 py-2 w-25" onClick={DeleatLast}>DEL</button>
           </div>
-          <div className="d-flex">
+          <div className="d-flex ">
             <Btn Nmb='4' handlerClick={ upDateResult } />
             <Btn Nmb='5' handlerClick={ upDateResult } />
             <Btn Nmb='6' handlerClick={ upDateResult } />
             <Btn Nmb='+' handlerClick={ upDateResult } />
           </div>
-          <div className="d-flex">
+          <div className="d-flex ">
             <Btn Nmb='7' handlerClick={ upDateResult } />
             <Btn Nmb='8' handlerClick={ upDateResult } />
             <Btn Nmb='9' handlerClick={ upDateResult } />
             <Btn Nmb='-' handlerClick={ upDateResult } />
           </div>
-          <div className="d-flex">
+          <div className="d-flex "> 
             <Btn Nmb='0' handlerClick={ upDateResult } />
-            {/* <Btn Nmb='/' handlerClick={ upDateResult } /> */}
-            {/* <Btn Nmb='*' handlerClick={ upDateResult } /> */}
+            
             <button className="btn btn-light m-2 px-4 py-2 w-25" value='*' onClick={ () => upDateResult('*') }>x</button>
             <button className="btn btn-light m-2 px-4 py-2 w-25" value='/' onClick={ () => upDateResult('/') }>÷</button>
             <Btn Nmb='.' handlerClick={ upDateResult } />
           </div>
-          <div className="d-flex">
-            <button className="btn btn-light m-2 px-4 py-2 w-50" onClick={DeleatAll}>AC</button>
-            <button className="btn btn-light m-2 px-4 py-2 w-50" onClick={EqualOperation}>=</button>
+          <div className="d-flex ">
+            <button className="btn btn-light m-2 px-4 py-2 w-50 " onClick={DeleatAll}>AC</button>
+            <button className="btn btn-success m-2 px-4 py-2 w-50" onClick={EqualOperation}>=</button>
           </div>
         </div>
       </div>

@@ -22,10 +22,12 @@ code {
 }
 
 .output {
-  padding: 20px 10px;
+  padding: 20px 15px;
   background-color: rgb(25 31 50);
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+      direction: rtl;
+        font-weight: 700;
 }
 .box{
   background-color: #191f32;
